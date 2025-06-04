@@ -1,0 +1,50 @@
+<!-- Header Component -->
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <h1>Weather<span>App</span></h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" id="nav-home">Home</a></li>
+        <li><a href="forecast.html" id="nav-forecast">Forecast</a></li>
+        <li><a href="alerts.html" id="nav-alerts">Alerts</a></li>
+        <li><a href="assistant.html" id="nav-assistant">Assistant</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  // Set active nav item based on current page
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentPath = window.location.pathname;
+    const navItems = {
+      'index.html': document.getElementById('nav-home'),
+      'forecast.html': document.getElementById('nav-forecast'),
+      'alerts.html': document.getElementById('nav-alerts'),
+      'assistant.html': document.getElementById('nav-assistant')
+    };
+    
+    // Default to home
+    let activeNav = navItems['index.html'];
+    
+    // Check if path ends with one of our pages
+    for (const [page, element] of Object.entries(navItems)) {
+      if (currentPath.endsWith(page) && element) {
+        activeNav = element;
+        break;
+      }
+    }
+    
+    // Set active class
+    if (activeNav) {
+      activeNav.classList.add('active');
+    }
+  });
+</script> 

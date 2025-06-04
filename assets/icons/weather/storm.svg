@@ -1,0 +1,64 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+    <linearGradient id="lightningGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="50%" stop-color="#FACC15" />
+      <stop offset="100%" stop-color="#EAB308" />
+    </linearGradient>
+    <filter id="cloudShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+    <filter id="lightningShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#FACC15" flood-opacity="0.6" />
+    </filter>
+    <filter id="lightningGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background for dramatic effect -->
+  <rect width="64" height="64" fill="#1E293B" opacity="0.1" rx="10" />
+  
+  <!-- Storm clouds -->
+  <g filter="url(#cloudShadow)">
+    <path d="M48 20C48 14.4772 43.5228 10 38 10C33.5917 10 30.3481 12.4547 28.9043 16.4135C27.7896 15.8858 26.5528 15.6 25.2623 15.6C20.9747 15.6 17.5 19.0624 17.5 23.35C17.5 23.6867 17.5233 24.0179 17.5688 24.3419C15.739 25.7303 14.5 27.9112 14.5 30.35C14.5 34.4571 17.8151 37.7722 21.9222 37.7722H48.0778C52.1849 37.7722 55.5 34.4571 55.5 30.35C55.5 26.2429 52.1849 22.9278 48.0778 22.9278C48.3607 21.8529 48.5 20.7363 48.5 19.6L48 20Z" fill="url(#cloudGradient)"/>
+    
+    <!-- Darker part of clouds -->
+    <path d="M44 25C43 21 38 17 33 18C27 19 24 23 24 27C24 29.5 26 32 28 33C26 33 23.5 32.5 22 30C19.5 26 22 20.5 27 18.5C32 16.5 38 18 41 22C44 26 43.5 32 39 35C41.5 33.5 44.5 30.5 44 25Z" fill="#475569" opacity="0.5"/>
+    
+    <!-- Cloud layers and details -->
+    <path d="M38 15C33.5 15 29.8 17.9 28.4 21.8C27.3 21.3 26 21 24.8 21C20.4 21 17 24.5 17 28.8C17 29.1 17 29.4 17.1 29.7C15.2 31.1 14 33.3 14 35.8C14 39.9 17.3 43.2 21.4 43.2H47.6C51.7 43.2 55 39.9 55 35.8C55 31.7 51.7 28.3 47.6 28.3C47.9 27.3 48 26.1 48 25V25Z" fill="url(#cloudGradient)" opacity="0.9"/>
+  </g>
+  
+  <!-- Lightning bolt -->
+  <g filter="url(#lightningGlow)">
+    <path d="M36 28L41 28L30 55L32.5 40.5L27.5 40.5L38.5 17L36 28Z" fill="url(#lightningGradient)" filter="url(#lightningShadow)">
+      <animate attributeName="opacity" values="1;0.8;1;0.9;1" dur="2s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Mini bolts/sparks -->
+  <g filter="url(#lightningGlow)">
+    <path d="M23 36L25 36L21 43L22 39L20 39L24 32L23 36Z" fill="url(#lightningGradient)" opacity="0.9">
+      <animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite" begin="0.5s" />
+    </path>
+    
+    <path d="M43 34L45 34L41 41L42 37L40 37L44 30L43 34Z" fill="url(#lightningGradient)" opacity="0.9">
+      <animate attributeName="opacity" values="0;1;0" dur="1.1s" repeatCount="indefinite" begin="0.8s" />
+    </path>
+  </g>
+  
+  <!-- Rain drops -->
+  <path d="M19 43L17 51" stroke="#7DD3FC" stroke-width="1.5" stroke-linecap="round" opacity="0.7">
+    <animate attributeName="opacity" values="0;0.7;0" dur="1.5s" repeatCount="indefinite" begin="0.2s" />
+  </path>
+  
+  <path d="M45 43L43 51" stroke="#7DD3FC" stroke-width="1.5" stroke-linecap="round" opacity="0.7">
+    <animate attributeName="opacity" values="0;0.7;0" dur="1.7s" repeatCount="indefinite" begin="0.7s" />
+  </path>
+</svg> 

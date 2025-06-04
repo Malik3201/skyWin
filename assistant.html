@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyBot Assistant - SkyCast</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+  <meta name="description" content="SkyCast - AI Weather Assistant">
+</head>
+<body>
+  <!-- Theme Toggle Button -->
+  <div class="theme-toggle" id="theme-toggle">
+    <div class="toggle-icon light-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+    </div>
+    <div class="toggle-icon dark-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <h1>Sky<span>Cast</span></h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="forecast.html">Forecast</a></li>
+          <li><a href="alerts.html">Alerts</a></li>
+          <li><a href="assistant.html" class="active">Assistant</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <section class="assistant-intro">
+        <div class="assistant-header">
+          <div class="assistant-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path>
+              <path d="M12 14a2 2 0 1 1 2-2 2 2 0 0 1-2 2z"></path>
+              <path d="M12 6v4"></path>
+              <path d="M16.24 7.76l-2.12 2.12"></path>
+              <path d="M18 12h-4"></path>
+              <path d="M16.24 16.24l-2.12-2.12"></path>
+              <path d="M12 18v-4"></path>
+              <path d="M7.76 16.24l2.12-2.12"></path>
+              <path d="M6 12h4"></path>
+              <path d="M7.76 7.76l2.12 2.12"></path>
+            </svg>
+          </div>
+          <div class="assistant-title">
+            <h2>SkyBot Weather Assistant</h2>
+            <p>Your personal weather guide</p>
+          </div>
+        </div>
+        
+        <div class="assistant-description">
+          <p>SkyBot can answer questions about weather, climate patterns, meteorology, and offer tips for different weather conditions. Simply ask anything related to weather and get accurate, helpful responses.</p>
+        </div>
+        
+        <div class="suggestion-chips">
+          <button class="suggestion-chip" data-query="What causes thunder and lightning?">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chip-icon">
+              <path d="M13 3v18l-5-5.5 5-6-5-5.5z"></path>
+            </svg>
+            What causes thunder?
+          </button>
+          <button class="suggestion-chip" data-query="How are hurricanes formed?">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chip-icon">
+              <path d="M17.998 8.5A10.9 10.9 0 0 0 5.998 2a7 7 0 0 0-3 11.938 10.9 10.9 0 0 0 8.5 5.062 7 7 0 0 0 6.5-10.5z"></path>
+              <path d="M14.997 12.5a1.499 1.499 0 0 1-2.998 0 1.499 1.499 0 1 0-2.998 0 4.498 4.498 0 0 0 5.996 0z"></path>
+            </svg>
+            How hurricanes form
+          </button>
+          <button class="suggestion-chip" data-query="What's the difference between weather and climate?">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chip-icon">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            Weather vs climate
+          </button>
+          <button class="suggestion-chip" data-query="What should I pack for rainy weather?">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chip-icon">
+              <path d="M8 19v2h8v-2"></path>
+              <path d="M8 19h8"></path>
+              <path d="M9 3c-.866 0-1.742.333-2.4 1.094a3 3 0 0 0-.536 3.406l7 12A3 3 0 0 0 15.8 21h2.2a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.2a3 3 0 0 0-2.7-1.7h-7.4a3 3 0 0 0-2.7 1.7H9z"></path>
+            </svg>
+            Tips for rain
+          </button>
+        </div>
+      </section>
+
+      <section class="chat-section">
+        <div class="full-chat-box" id="full-chat-box">
+          <div class="chat-messages" id="chat-messages">
+            <div class="chat-message bot">
+              <div class="chat-message-content">
+                👋 Hi there! I'm SkyBot, your weather assistant. Ask me anything about weather or climate!
+              </div>
+            </div>
+          </div>
+          <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Ask about weather..." autocomplete="off">
+            <button id="chat-send">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="current-year">2024</span> SkyCast. Powered by OpenWeatherMap API.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/assistant.js" type="module"></script>
+</body>
+</html> 

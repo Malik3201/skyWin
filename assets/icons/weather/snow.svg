@@ -1,0 +1,91 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+    <linearGradient id="snowflakeGradient" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <filter id="cloudShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.2" />
+    </filter>
+    <filter id="snowGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Cloud with frosted edges -->
+  <path d="M48 19C48 13.4772 43.5228 9 38 9C33.5917 9 29.8357 11.8547 28.3917 15.8131C27.2768 15.2854 26.0402 15 24.75 15C20.4624 15 17 18.4624 17 22.75C17 23.0867 17.0233 23.4179 17.0688 23.7419C15.239 25.1303 14 27.3112 14 29.75C14 33.8571 17.3151 37.1722 21.4222 37.1722H47.5778C51.6849 37.1722 55 33.8571 55 29.75C55 25.6429 51.6849 22.3278 47.5778 22.3278C47.8607 21.2529 48 20.1363 48 19Z" fill="url(#cloudGradient)" filter="url(#cloudShadow)" />
+  
+  <!-- Cloud frost details -->
+  <path d="M45 18C42.5 13 37 11 32 13C25.5 15.5 23 22 27 28C31 34 38.5 35 44 31" stroke="#CBD5E1" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 2" opacity="0.7" />
+  <path d="M29 17C23 17 19 21 19 26" stroke="#CBD5E1" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 2" opacity="0.7" />
+  
+  <!-- Cloud highlight -->
+  <path d="M22 26C23 25 25 24.5 27 25.5C29 26.5 28.5 28.5 26.5 29C24.5 29.5 21 29 19 27C20 28 21.5 28.5 23.5 28C25.5 27.5 25.5 26 25 25C24.5 24 21 27 22 26Z" fill="white" opacity="0.7" />
+  
+  <!-- Falling Snowflakes -->
+  <g filter="url(#snowGlow)">
+    <!-- Detailed Snowflake 1 -->
+    <g opacity="0.9">
+      <circle cx="22" cy="42" r="1.5" fill="url(#snowflakeGradient)" />
+      <line x1="22" y1="38" x2="22" y2="46" stroke="url(#snowflakeGradient)" stroke-width="0.8" stroke-linecap="round" />
+      <line x1="18" y1="42" x2="26" y2="42" stroke="url(#snowflakeGradient)" stroke-width="0.8" stroke-linecap="round" />
+      <line x1="19.4" y1="39.4" x2="24.6" y2="44.6" stroke="url(#snowflakeGradient)" stroke-width="0.8" stroke-linecap="round" />
+      <line x1="19.4" y1="44.6" x2="24.6" y2="39.4" stroke="url(#snowflakeGradient)" stroke-width="0.8" stroke-linecap="round" />
+      <animate attributeName="transform" type="translate" values="0,0; 0,12; 0,0" dur="4s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0;0.9;0" dur="4s" repeatCount="indefinite" />
+    </g>
+    
+    <!-- Detailed Snowflake 2 -->
+    <g opacity="0.9">
+      <circle cx="32" cy="45" r="1.8" fill="url(#snowflakeGradient)" />
+      <line x1="32" y1="41" x2="32" y2="49" stroke="url(#snowflakeGradient)" stroke-width="1" stroke-linecap="round" />
+      <line x1="28" y1="45" x2="36" y2="45" stroke="url(#snowflakeGradient)" stroke-width="1" stroke-linecap="round" />
+      <line x1="29.4" y1="42.4" x2="34.6" y2="47.6" stroke="url(#snowflakeGradient)" stroke-width="1" stroke-linecap="round" />
+      <line x1="29.4" y1="47.6" x2="34.6" y2="42.4" stroke="url(#snowflakeGradient)" stroke-width="1" stroke-linecap="round" />
+      <!-- Small details for center snowflake -->
+      <line x1="32" y1="40" x2="32" y2="41" stroke="url(#snowflakeGradient)" stroke-width="0.5" stroke-linecap="round" />
+      <line x1="32" y1="49" x2="32" y2="50" stroke="url(#snowflakeGradient)" stroke-width="0.5" stroke-linecap="round" />
+      <line x1="27" y1="45" x2="28" y2="45" stroke="url(#snowflakeGradient)" stroke-width="0.5" stroke-linecap="round" />
+      <line x1="36" y1="45" x2="37" y2="45" stroke="url(#snowflakeGradient)" stroke-width="0.5" stroke-linecap="round" />
+      <animate attributeName="transform" type="translate" values="0,0; 0,15; 0,0" dur="6s" begin="0.5s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0;0.9;0" dur="6s" begin="0.5s" repeatCount="indefinite" />
+    </g>
+    
+    <!-- Detailed Snowflake 3 -->
+    <g opacity="0.9">
+      <circle cx="42" cy="43" r="1.3" fill="url(#snowflakeGradient)" />
+      <line x1="42" y1="40" x2="42" y2="46" stroke="url(#snowflakeGradient)" stroke-width="0.7" stroke-linecap="round" />
+      <line x1="39" y1="43" x2="45" y2="43" stroke="url(#snowflakeGradient)" stroke-width="0.7" stroke-linecap="round" />
+      <line x1="40" y1="41" x2="44" y2="45" stroke="url(#snowflakeGradient)" stroke-width="0.7" stroke-linecap="round" />
+      <line x1="40" y1="45" x2="44" y2="41" stroke="url(#snowflakeGradient)" stroke-width="0.7" stroke-linecap="round" />
+      <animate attributeName="transform" type="translate" values="0,0; 0,14; 0,0" dur="5s" begin="1s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0;0.9;0" dur="5s" begin="1s" repeatCount="indefinite" />
+    </g>
+    
+    <!-- Small Snowflake 4 -->
+    <g opacity="0.8">
+      <circle cx="26" cy="47" r="0.8" fill="url(#snowflakeGradient)" />
+      <line x1="26" y1="45.2" x2="26" y2="48.8" stroke="url(#snowflakeGradient)" stroke-width="0.5" stroke-linecap="round" />
+      <line x1="24.2" y1="47" x2="27.8" y2="47" stroke="url(#snowflakeGradient)" stroke-width="0.5" stroke-linecap="round" />
+      <animate attributeName="transform" type="translate" values="0,0; -2,10; 0,0" dur="3.5s" begin="2s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="3.5s" begin="2s" repeatCount="indefinite" />
+    </g>
+    
+    <!-- Small Snowflake 5 -->
+    <g opacity="0.8">
+      <circle cx="37" cy="40" r="0.8" fill="url(#snowflakeGradient)" />
+      <line x1="37" y1="38.2" x2="37" y2="41.8" stroke="url(#snowflakeGradient)" stroke-width="0.5" stroke-linecap="round" />
+      <line x1="35.2" y1="40" x2="38.8" y2="40" stroke="url(#snowflakeGradient)" stroke-width="0.5" stroke-linecap="round" />
+      <animate attributeName="transform" type="translate" values="0,0; 2,12; 0,0" dur="3s" begin="0.7s" repeatCount="indefinite" additive="sum" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="3s" begin="0.7s" repeatCount="indefinite" />
+    </g>
+  </g>
+  
+  <!-- Snow on ground hint -->
+  <path d="M12 54C12 54 16 52 22 52C28 52 31 54 38 54C45 54 52 52 52 52" stroke="url(#snowflakeGradient)" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+</svg> 

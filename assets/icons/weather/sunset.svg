@@ -1,0 +1,144 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sunsetGradient" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#FFBE0B" />
+      <stop offset="100%" stop-color="#D00000" />
+    </linearGradient>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E85D04" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#DC2F02" />
+      <stop offset="100%" stop-color="#E85D04" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="groundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="sunsetGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="starGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="0.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Sky background with sunset colors -->
+  <rect width="64" height="40" fill="url(#skyGradient)" opacity="0.6" />
+  
+  <!-- Horizon line -->
+  <rect x="4" y="40" width="56" height="2" rx="1" fill="#1E293B" />
+  
+  <!-- Land/Ground with darker color for sunset -->
+  <rect x="4" y="42" width="56" height="18" rx="2" fill="url(#groundGradient)" />
+  
+  <!-- Sun -->
+  <g filter="url(#sunsetGlow)">
+    <!-- Sun moving animation -->
+    <circle cx="32" cy="30" r="12" fill="url(#sunsetGradient)">
+      <animate 
+        attributeName="cy" 
+        values="30;40;60" 
+        dur="3s" 
+        repeatCount="1"
+        fill="freeze"
+        begin="0.2s"
+        calcMode="spline"
+        keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    </circle>
+    
+    <!-- Sun rays that fade out -->
+    <g>
+      <path d="M32 16V21" stroke="url(#sunsetGradient)" stroke-width="2" stroke-linecap="round">
+        <animate attributeName="opacity" values="1;1;0" dur="3s" begin="0s" fill="freeze" />
+      </path>
+      <path d="M32 59V54" stroke="url(#sunsetGradient)" stroke-width="2" stroke-linecap="round">
+        <animate attributeName="opacity" values="1;1;0" dur="3s" begin="0s" fill="freeze" />
+      </path>
+      <path d="M16 40H21" stroke="url(#sunsetGradient)" stroke-width="2" stroke-linecap="round">
+        <animate attributeName="opacity" values="1;1;0" dur="3s" begin="0s" fill="freeze" />
+      </path>
+      <path d="M48 40H43" stroke="url(#sunsetGradient)" stroke-width="2" stroke-linecap="round">
+        <animate attributeName="opacity" values="1;1;0" dur="3s" begin="0s" fill="freeze" />
+      </path>
+      
+      <path d="M21 29L24 32" stroke="url(#sunsetGradient)" stroke-width="2" stroke-linecap="round">
+        <animate attributeName="opacity" values="1;1;0" dur="3s" begin="0s" fill="freeze" />
+      </path>
+      <path d="M43 51L40 48" stroke="url(#sunsetGradient)" stroke-width="2" stroke-linecap="round">
+        <animate attributeName="opacity" values="1;1;0" dur="3s" begin="0s" fill="freeze" />
+      </path>
+      <path d="M21 51L24 48" stroke="url(#sunsetGradient)" stroke-width="2" stroke-linecap="round">
+        <animate attributeName="opacity" values="1;1;0" dur="3s" begin="0s" fill="freeze" />
+      </path>
+      <path d="M43 29L40 32" stroke="url(#sunsetGradient)" stroke-width="2" stroke-linecap="round">
+        <animate attributeName="opacity" values="1;1;0" dur="3s" begin="0s" fill="freeze" />
+      </path>
+    </g>
+  </g>
+  
+  <!-- Fading light across the sky -->
+  <path d="M32 40 L55 25" stroke="url(#sunsetGradient)" stroke-width="0.7" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0" dur="2.5s" begin="0.5s" fill="freeze" />
+  </path>
+  <path d="M32 40 L9 25" stroke="url(#sunsetGradient)" stroke-width="0.7" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0" dur="2.5s" begin="0.5s" fill="freeze" />
+  </path>
+  <path d="M32 40 L50 15" stroke="url(#sunsetGradient)" stroke-width="0.7" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0" dur="2.5s" begin="0.5s" fill="freeze" />
+  </path>
+  <path d="M32 40 L14 15" stroke="url(#sunsetGradient)" stroke-width="0.7" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0" dur="2.5s" begin="0.5s" fill="freeze" />
+  </path>
+  
+  <!-- Arrow indicating sunset -->
+  <path d="M32 36L24 44M32 36L40 44M32 36V52" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <animate 
+      attributeName="opacity" 
+      values="1;0" 
+      dur="1.5s" 
+      begin="1.5s"
+      fill="freeze" />
+  </path>
+  
+  <!-- Small stars that appear as sun sets -->
+  <g filter="url(#starGlow)">
+    <circle cx="14" cy="22" r="1" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9" dur="3s" begin="1.5s" fill="freeze" />
+      <animate attributeName="r" values="0.5;1;0.8" dur="4s" begin="1.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="50" cy="18" r="1" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9" dur="3s" begin="1.7s" fill="freeze" />
+      <animate attributeName="r" values="0.5;0.8;0.5" dur="3s" begin="1.7s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="22" cy="14" r="0.8" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9" dur="3s" begin="1.9s" fill="freeze" />
+      <animate attributeName="r" values="0.4;0.7;0.4" dur="5s" begin="1.9s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="42" cy="26" r="0.8" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9" dur="3s" begin="2.1s" fill="freeze" />
+      <animate attributeName="r" values="0.3;0.6;0.3" dur="3.5s" begin="2.1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="32" cy="12" r="1.2" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9" dur="3s" begin="2.3s" fill="freeze" />
+      <animate attributeName="r" values="0.7;1.2;0.7" dur="4.5s" begin="2.3s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Extra stars for a more filled night sky -->
+    <circle cx="10" cy="30" r="0.6" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.8" dur="3s" begin="2.5s" fill="freeze" />
+      <animate attributeName="r" values="0.3;0.6;0.3" dur="3s" begin="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="54" cy="28" r="0.7" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.8" dur="3s" begin="2.7s" fill="freeze" />
+      <animate attributeName="r" values="0.4;0.7;0.4" dur="4s" begin="2.7s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="25" cy="6" r="0.9" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.8" dur="3s" begin="2.9s" fill="freeze" />
+      <animate attributeName="r" values="0.5;0.9;0.5" dur="5s" begin="2.9s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- "SUNSET" text -->
+  <text x="32" y="58" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="6" font-weight="bold">SUNSET</text>
+</svg> 

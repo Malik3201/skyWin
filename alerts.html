@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Alerts - SkyCast</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+  <meta name="description" content="SkyCast - Weather Alerts and Warnings">
+</head>
+<body>
+  <!-- Theme Toggle Button -->
+  <div class="theme-toggle" id="theme-toggle">
+    <div class="toggle-icon light-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+    </div>
+    <div class="toggle-icon dark-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <h1>Sky<span>Cast</span></h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="forecast.html">Forecast</a></li>
+          <li><a href="alerts.html" class="active">Alerts</a></li>
+          <li><a href="assistant.html">Assistant</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <!-- Search Section -->
+      <section class="search-section">
+        <div class="search-container">
+          <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search for a city..." autocomplete="off">
+            <button id="search-btn" aria-label="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <button id="location-btn" class="location-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            Use my location
+          </button>
+        </div>
+      </section>
+
+      <!-- Loading Section -->
+      <section id="loading-section" class="weather-section">
+        <div class="loading-indicator" id="loader">
+          <div class="loading-spinner"></div>
+          <p>Fetching weather alerts...</p>
+        </div>
+      </section>
+
+      <!-- Location Info Section -->
+      <section id="location-info" class="weather-section hidden">
+        <div class="location-header">
+          <h2 id="location-title">Weather Alerts for <span id="city-name">City Name</span></h2>
+          <div class="location-details">
+            <span id="country-name">Country</span>
+            <img id="country-flag" src="" alt="Country flag" class="flag-icon">
+          </div>
+        </div>
+      </section>
+
+      <!-- Alerts Section -->
+      <section id="alerts-section" class="weather-section hidden">
+        <h2>Current Weather Alerts</h2>
+        <div id="alerts-container">
+          <!-- Weather alerts will be inserted here -->
+          <p class="no-alerts-message" id="no-alerts-message">No active alerts for this location</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="current-year">2024</span> SkyCast. Powered by OpenWeatherMap API.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/alerts.js" type="module"></script>
+</body>
+</html> 

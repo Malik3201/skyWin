@@ -1,0 +1,96 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sunGradient" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#FEF9C3" />
+      <stop offset="100%" stop-color="#FACC15" />
+    </linearGradient>
+    <linearGradient id="hazeGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E5E7EB" stop-opacity="0" />
+      <stop offset="50%" stop-color="#E5E7EB" />
+      <stop offset="100%" stop-color="#E5E7EB" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="hazeGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D1D5DB" stop-opacity="0" />
+      <stop offset="50%" stop-color="#D1D5DB" />
+      <stop offset="100%" stop-color="#D1D5DB" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="hazeGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9CA3AF" stop-opacity="0" />
+      <stop offset="50%" stop-color="#9CA3AF" />
+      <stop offset="100%" stop-color="#9CA3AF" stop-opacity="0" />
+    </linearGradient>
+    <filter id="sunGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="hazeBlur" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+    </filter>
+  </defs>
+  
+  <!-- Background gradient -->
+  <rect width="64" height="64" rx="10" fill="url(#hazeGradient3)" opacity="0.1" />
+  
+  <!-- Sun behind haze -->
+  <g filter="url(#sunGlow)">
+    <circle cx="32" cy="18" r="10" fill="url(#sunGradient)" opacity="0.8" />
+    
+    <!-- Sun rays peeking through -->
+    <path d="M32 6V8" stroke="url(#sunGradient)" stroke-width="2" stroke-linecap="round" />
+    <path d="M32 28V30" stroke="url(#sunGradient)" stroke-width="2" stroke-linecap="round" />
+    <path d="M20 18H22" stroke="url(#sunGradient)" stroke-width="2" stroke-linecap="round" />
+    <path d="M42 18H44" stroke="url(#sunGradient)" stroke-width="2" stroke-linecap="round" />
+    
+    <path d="M24 10L25.5 11.5" stroke="url(#sunGradient)" stroke-width="2" stroke-linecap="round" />
+    <path d="M38.5 24.5L40 26" stroke="url(#sunGradient)" stroke-width="2" stroke-linecap="round" />
+    <path d="M24 26L25.5 24.5" stroke="url(#sunGradient)" stroke-width="2" stroke-linecap="round" />
+    <path d="M38.5 11.5L40 10" stroke="url(#sunGradient)" stroke-width="2" stroke-linecap="round" />
+  </g>
+  
+  <!-- Fog/Haze layers -->
+  <g filter="url(#hazeBlur)">
+    <!-- Top layers partially covering the sun -->
+    <rect x="10" y="25" width="44" height="3" rx="1.5" fill="url(#hazeGradient1)" opacity="0.9">
+      <animate attributeName="x" values="10;8;10" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="10s" repeatCount="indefinite" />
+    </rect>
+    
+    <rect x="8" y="31" width="48" height="3" rx="1.5" fill="url(#hazeGradient2)" opacity="0.8">
+      <animate attributeName="x" values="8;10;8" dur="15s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="12s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Middle layer (thicker) -->
+    <rect x="6" y="37" width="52" height="4" rx="2" fill="url(#hazeGradient3)" opacity="0.9">
+      <animate attributeName="x" values="6;4;6" dur="20s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="13s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Lower layers -->
+    <rect x="12" y="44" width="40" height="3" rx="1.5" fill="url(#hazeGradient2)" opacity="0.8">
+      <animate attributeName="x" values="12;14;12" dur="17s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="14s" repeatCount="indefinite" />
+    </rect>
+    
+    <rect x="16" y="51" width="32" height="3" rx="1.5" fill="url(#hazeGradient1)" opacity="0.7">
+      <animate attributeName="x" values="16;14;16" dur="16s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0.8;0.6" dur="11s" repeatCount="indefinite" />
+    </rect>
+  </g>
+  
+  <!-- Particles floating in the haze -->
+  <circle cx="20" cy="34" r="0.8" fill="#E5E7EB" opacity="0.6">
+    <animate attributeName="cx" values="20;24;20" dur="12s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;0.6;0" dur="5s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="42" cy="42" r="0.6" fill="#E5E7EB" opacity="0.6">
+    <animate attributeName="cx" values="42;40;42" dur="9s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;0.6;0" dur="7s" repeatCount="indefinite" begin="2s" />
+  </circle>
+  
+  <circle cx="30" cy="48" r="0.7" fill="#E5E7EB" opacity="0.6">
+    <animate attributeName="cx" values="30;34;30" dur="15s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;0.6;0" dur="6s" repeatCount="indefinite" begin="1s" />
+  </circle>
+</svg> 

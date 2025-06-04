@@ -1,0 +1,21 @@
+<!-- Footer Component -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; <span id="current-year">2024</span> WeatherApp. Powered by OpenWeatherMap API and Gemini AI.</p>
+    <div class="footer-links">
+      <a href="#" id="privacy-policy">Privacy Policy</a>
+      <a href="#" id="terms-of-use">Terms of Use</a>
+      <a href="#" id="contact-us">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Set current year
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentYearElement = document.getElementById('current-year');
+    if (currentYearElement) {
+      currentYearElement.textContent = new Date().getFullYear();
+    }
+  });
+</script> 

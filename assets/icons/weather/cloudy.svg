@@ -1,0 +1,50 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cloudGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E0E6F0" />
+    </linearGradient>
+    <linearGradient id="cloudGradient2" x1="0%" y1="10%" x2="100%" y2="90%">
+      <stop offset="0%" stop-color="#FCFCFC" />
+      <stop offset="100%" stop-color="#C2C9D6" />
+    </linearGradient>
+    <linearGradient id="cloudGradient3" x1="30%" y1="20%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#D0D8E8" />
+    </linearGradient>
+    <filter id="cloudShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+    <filter id="cloudInnerShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="0.5" flood-color="#000000" flood-opacity="0.1" />
+    </filter>
+  </defs>
+  
+  <!-- Background blue sky hint -->
+  <rect width="64" height="64" rx="10" fill="#87CEEB" opacity="0.05" />
+  
+  <!-- Back Cloud Shadow -->
+  <ellipse cx="30" cy="42" rx="26" ry="7" fill="#E0E6F0" opacity="0.3" />
+  
+  <!-- Back Cloud -->
+  <path d="M50 24C50 18.4772 45.5228 14 40 14C35.1716 14 31.1291 17.2827 30.1801 21.7446C29.4939 21.2796 28.6879 21 27.8125 21C25.156 21 23 23.156 23 25.8125C23 26.176 23.0388 26.5279 23.1127 26.8638C21.3568 27.7484 20.125 29.5548 20.125 31.6562C20.125 34.6023 22.5227 37 25.4688 37H49.0312C51.9773 37 54.375 34.6023 54.375 31.6562C54.375 28.7102 51.9773 26.3125 49.0312 26.3125C49.6654 25.5988 50 24.6853 50 23.7008V24Z" fill="url(#cloudGradient1)" filter="url(#cloudShadow)" />
+  
+  <!-- Middle Cloud -->
+  <path d="M44 30C44 24.4772 39.5228 20 34 20C29.5917 20 25.8357 22.8547 24.3917 26.8131C23.2768 26.2854 22.0402 26 20.75 26C16.4624 26 13 29.4624 13 33.75C13 34.0867 13.0233 34.4179 13.0688 34.7419C11.239 36.1303 10 38.3112 10 40.75C10 44.8571 13.3151 48.1722 17.4222 48.1722H43.5778C47.6849 48.1722 51 44.8571 51 40.75C51 36.6429 47.6849 33.3278 43.5778 33.3278C43.8607 32.2529 44 31.1363 44 30Z" fill="url(#cloudGradient2)" filter="url(#cloudShadow)" />
+  
+  <!-- Front Cloud -->
+  <path d="M39 38C39 34.134 35.866 31 32 31C28.9194 31 26.2741 32.8553 25.2756 35.5494C24.523 35.1923 23.6828 35 22.8 35C19.749 35 17 37.8079 17 41.2C17 41.4654 17.0166 41.7256 17.0489 41.9797C15.7931 42.9931 15 44.5686 15 46.35C15 49.4651 17.4438 52 20.45 52H38.55C41.5562 52 44 49.4651 44 46.35C44 43.2349 41.5562 40.7 38.55 40.7C38.8461 39.8648 39 38.9528 39 38Z" fill="url(#cloudGradient3)" filter="url(#cloudShadow)" />
+  
+  <!-- Cloud highlights -->
+  <path d="M23 41.5C24 40.5 26 40 28 41C30 42 29.5 44 27.5 44.5C25.5 45 22 44.5 20 42.5C21 43.5 22.5 44 24.5 43.5C26.5 43 26.5 41.5 26 40.5C25.5 39.5 22 42.5 23 41.5Z" fill="white" opacity="0.6" filter="url(#cloudInnerShadow)" />
+  <path d="M35 37.5C36 36.5 38 36 40 37C42 38 41.5 40 39.5 40.5C37.5 41 34 40.5 32 38.5C33 39.5 34.5 40 36.5 39.5C38.5 39 38.5 37.5 38 36.5C37.5 35.5 34 38.5 35 37.5Z" fill="white" opacity="0.5" filter="url(#cloudInnerShadow)" />
+  
+  <!-- Animated floating (CSS animation would be applied in code) -->
+  <animateTransform 
+    attributeName="transform" 
+    type="translate" 
+    values="0,0; 0,-1; 0,0" 
+    dur="3s" 
+    repeatCount="indefinite" 
+    additive="sum" />
+</svg> 
